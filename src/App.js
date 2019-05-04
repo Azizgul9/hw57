@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    const tasks = [
+        {id: 234, title: 'Create user registration API', timeSpent: 4, category: 'Backend', type: 'task'},
+        {id: 235, title: 'Create user registration UI', timeSpent: 8, category: 'Frontend', type: 'task'},
+        {id: 237, title: 'User sign-in via Google UI', timeSpent: 3.5, category: 'Frontend', type: 'task'},
+        {id: 238, title: 'User sign-in via Google API', timeSpent: 5, category: 'Backend', type: 'task'},
+        {id: 241, title: 'Fix account linking', timeSpent: 5, category: 'Backend', type: 'bug'},
+        {id: 250, title: 'Fix wrong time created on new record', timeSpent: 1, category: 'Backend', type: 'bug'},
+        {id: 262, title: 'Fix sign-in failed messages', timeSpent: 2, category: 'Frontend', type: 'bug'},
+
+    ];
+    //Общее количество времени,
+    // затраченное на работу над
+    // задачами из категории 'Frontend'
+    
+
+    render() {
+        return (
+            <div>
+
+            </div>
+        );
+    }
 }
 
 export default App;

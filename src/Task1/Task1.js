@@ -8,6 +8,44 @@ const tasks = [
     {id: 262, title: 'Fix sign-in failed messages', timeSpent: 2, category: 'Frontend', type: 'bug'},
 
 ];
-//Общее количество времени,
+//#1 Общее количество времени,
 // затраченное на работу над
 // задачами из категории 'Frontend'
+
+let totalFrontentTimeCounter=tasks.reduce((sum,task)=>{
+    if(task.category==='Frontend'){
+        sum+=task.timeSpent;
+    }
+    return sum;
+},0);
+
+console.log("Total time for \'Frontend\': ",totalFrontentTimeCounter);
+//#2 Общее количество времени, затраченное на работу над задачами типа 'bug'.
+let totalBugTypeTimeCounter=tasks.reduce((sum,task)=>{
+    if(task.type==='bug'){
+        sum+=task.timeSpent;
+    }
+    return sum;
+},0);
+console.log("Total time for type \'bug\': ",totalBugTypeTimeCounter);
+
+//#3 Количество задач, имеющих в названии слово "UI".
+
+const Uincludes = tasks.filter(task => task.title.includes('UI')).length;
+console.log('Количество задач, имеющих в названии слово \"UI\" ' +  Uincludes);
+
+//#4 Получите количество задач каждой категории в объект вида: {Frontend: 3, Backend: 4}
+let fcounter=0;
+let bcounter=0;
+
+tasks.map(task=>{
+    if(task.category==='Frontend'){
+        fcounter++;
+    }
+    else bcounter++;
+});
+
+let result={Frontend :fcounter, Backend: bcounter};
+
+console.log(result);
+
